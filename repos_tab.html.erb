@@ -6,16 +6,72 @@
     <link rel="stylesheet" href="/styles.css" media="screen">
   </head>
   <body>
-    <h1>rocketosborne</h1>
-    <h2>rposborne</h2>
 
-    <article class = "">
-      <% @repos.each do |el| %>
-        <%= el['name'] %>
-        <%= el['language'] %>
-        <%= el['updated_at'] %>
-      <% end %>
+    <header></header>
+
+    <article class="profile">
+      <img src="https://avatars2.githubusercontent.com/u/243989?v=3&s=400">
+      <h1>rocketosborne</h1>
+      <h3>rposborne</h3>
+      <input type="submit" name="commit" value="Follow">
+      <br>
+      <p>Block or report user</p>
+      <hr>
+      <p>Burningpony Corp</p>
+      <p>VA</p>
+      <p>russell@burningpony.com</p>
+      <p>https://burningpony.com</p>
+      <p>Joined on Apr 14, 2010</p>
+      <hr>
+      <h4>Organizations</h4>
     </article>
+
+    <aside class = "repos">
+      <nav>
+          <a href="">Overview</a>
+          <a href="">Repositories</a>
+          <a href="">Stars</a>
+          <a href="">Followers</a>
+          <a href="">Following</a>
+      </nav>
+
+      <hr>
+      <form action="" method="post">
+      <input type="text" name="search">
+
+      <div class="type">
+        <input type="submit" name="commit" value="Type">
+          <ul id="actions">
+            <li><a href="">All</a></li>
+            <li><a href="">Sources</a></li>
+            <li><a href="">Forks</a></li>
+            <li><a href="">Mirrors</a></li>
+          </ul>
+      </div>
+
+      <div class="type">
+        <input type="submit" name="commit" value="Language">
+          <ul id="actions">
+            <li><a href="">All</a></li>
+            <li><a href="">Elixir</a></li>
+            <li><a href="">HTML</a></li>
+            <li><a href="">JavaScript</a></li>
+            <li><a href="">PHP</a></li>
+            <li><a href="">Ruby</a></li>
+            <li><a href="">Shell</a></li>
+          </ul>
+      </div>
+      <br>
+      <hr>
+
+      <div class="repos"
+        <% @repos.each do |el| %>
+          <p><a href=""><%= el['name'] %></a></p>
+          <p><%= el['language']%> <%= el['pushed_at']%></p>
+          <hr>
+        <% end %>
+      </div>
+    </aside>
 
   </body>
 </html>

@@ -2,6 +2,8 @@ require 'sinatra'
 require 'erb'
 require 'pry'
 require './repo'
+require 'active_support'
+require 'active_support/core_ext'
 
 helpers do
   def render_template(filename)
