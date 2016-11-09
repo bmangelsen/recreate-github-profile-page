@@ -2,6 +2,7 @@ require "sinatra"
 require "erb"
 require "pry"
 require "./repo"
+require "./user"
 require "active_support"
 require "active_support/core_ext"
 
@@ -17,6 +18,7 @@ get "/" do
 end
 
 post "/repos_tab" do
+  @user = User.new.get(params["username"])
   @repos = Repo.new.get(params["username"])
   render_template("repos_tab.html.erb")
 end

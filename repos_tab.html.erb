@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>rposborne (rocketosborne)</title>
+    <title><%= @user["login"] %> (<%= @user["name"] %>)</title>
     <link rel="stylesheet" href="/styles.css" media="screen">
   </head>
   <body>
@@ -10,29 +10,29 @@
     <header></header>
 
     <article class="profile">
-      <img src="https://avatars2.githubusercontent.com/u/243989?v=3&s=400">
-      <h1>rocketosborne</h1>
-      <h3>rposborne</h3>
+      <img src="<%= @user["avatar_url"] %>">
+      <h1><%= @user["login"] %></h1>
+      <h3><%= @user["name"] %></h3>
+      <%= @user["bio"] %>
       <input type="submit" name="commit" value="Follow">
-      <br>
-      <p>Block or report user</p>
+      <p><a href="">Block or report user</a></p>
       <hr>
-      <p>Burningpony Corp</p>
-      <p>VA</p>
-      <p>russell@burningpony.com</p>
-      <p>https://burningpony.com</p>
-      <p>Joined on Apr 14, 2010</p>
+      <p><%= @user["company"] %></p>
+      <p><%= @user["location"] %></p>
+      <p><%= @user["email"] %></p>
+      <p><%= @user["blog"] %></p>
+      <p><%= @user["created_at"] %></p>
       <hr>
       <h4>Organizations</h4>
     </article>
 
     <aside class = "repos">
       <nav>
-          <a href="">Overview</a>
-          <a href="">Repositories</a>
-          <a href="">Stars</a>
-          <a href="">Followers</a>
-          <a href="">Following</a>
+          <a href="<%= @user["html_url"] %>">Overview</a>
+          <a href="https://github.com/<%= @user["login"] %>?tab=repositories">Repositories (<%= @user["public_repos"] %>)</a>
+          <a href="https://github.com/<%= @user["login"] %>?tab=stars">Stars</a>
+          <a href="https://github.com/<%= @user["login"] %>?tab=followers">Followers (<%= @user["followers"] %>)</a>
+          <a href="https://github.com/<%= @user["login"] %>?tab=following">Following (<%= @user["following"] %>)</a>
       </nav>
 
       <hr>
