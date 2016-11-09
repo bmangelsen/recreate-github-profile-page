@@ -1,14 +1,10 @@
-require 'httparty'
-require 'pry'
-require 'active_support'
-require 'active_support/core_ext'
+require "httparty"
+require "pry"
 
 class Repo
-
-  BASE_URI = "https://api.github.com/users/"
+  BASE_URI = "https://api.github.com/users/".freeze
 
   def get(username)
-    HTTParty.get("#{BASE_URI}#{username}/repos", query: {sort: :pushed}, :headers => {"Authorization" => "token #{ENV["GITHUB_API_KEY"]}", "User-Agent" => "bmangelsen"})
+    HTTParty.get("#{BASE_URI}#{username}/repos?access_token=#{ENV['GITHUB_API_KEY']}")
   end
-
 end
