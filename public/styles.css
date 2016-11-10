@@ -47,13 +47,9 @@ nav {
   padding-top: 25px;
 }
 
-ul#actions {
-  display: none;
-}
-
 .type:hover ul#actions
 {
-    display: block;
+  display: block;
 }
 
 aside input {
